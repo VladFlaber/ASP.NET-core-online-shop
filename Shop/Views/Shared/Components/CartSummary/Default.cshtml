@@ -1,0 +1,16 @@
+﻿@model Cart
+<div class="">
+    @if (Model.CartItems.Count() > 0)
+    {
+        <small class="navbar-text">
+            <b>Your cart:</b>
+            @Model.CartItems.Sum(x=>x.Quantity) item(s)
+            @Model.CalculateTotalValue().ToString("#.## грн")
+        </small>
+    }
+<div class="rounded-circle float-right" style="background-color:#fb9043">
+    <a class="btn btn-sm " asp-controller="Cart" asp-action="Index">
+    <i class="fa fa-shopping-cart" style="color:darkslategray"> </i> 
+    </a>
+</div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model Shop.ViewModels.ProductIndexViewModel
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>List</h1>
+<div class="modal-placeholder"></div>
+<button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#add-product"
+        data-url="/Admin/Products/AddProduct">
+    Add contact
+</button>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Изображение</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Вес</th>
+            <th>Категория</th>
+            <th>Производитель</th>
+            <th>Рейтинг</th>
+            <th><i class="fas fa-edit"></i></th>
+            <th><i class="fas fa-trash-alt"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Products)
+        {
+            <tr>
+
+                <td>@p.Product.Id</td>
+                <td><img class="w-100" src="@p.FrontImage" alt="Alternate Text" /></td>
+                <td>@p.Product.Name</td>
+                <td>@p.Product.Price</td>
+                <td>@p.Product.Weight</td>
+                <td>@p.Category</td>
+                <td>@p.ManufacturerName</td>
+                <td>@p.Product.Rating</td>
+                <td><a asp-area="Admin" asp-action="Edit" asp-controller="Products">Edit</a> </td>
+                <td><a asp-area="Admin" asp-action="Remove" asp-controller="Products">Remove</a> </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

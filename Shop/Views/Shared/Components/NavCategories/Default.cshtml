@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "NavCategories";
+}
+@*<link href="~/css/SideBar.css" rel="stylesheet" />*@
+<link href="~/css/Shop.css" rel="stylesheet" />
+@*<a asp-action="Index" asp-controller="Home" asp-route-category="Home"></a>*@  
+<div id="divCategory" >
+    <ul id="categoryNav" class="nav flex-md-column">
+        @foreach (var category in Model)
+        {
+            <li class="nav-item">
+
+                <a asp-action="Index" asp-controller="Home" asp-route-category="@category.Name" asp-route-page="1">
+                    <strong>  @category.Name</strong>
+                </a>
+                <ul class="nav subCategoriesNav">
+                    @foreach (var subcategory in category.SubCategories)
+                    {
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Home" asp-route-category="@subcategory.Name" asp-route-page="1">
+                                @subcategory.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+            
+        }
+ 
+    </ul>
+</div>

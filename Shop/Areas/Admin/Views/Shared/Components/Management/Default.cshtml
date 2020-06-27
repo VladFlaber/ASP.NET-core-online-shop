@@ -1,0 +1,33 @@
+﻿@model List<string>
+@{
+    Layout = null;
+}
+    <ul>
+        <li>
+            @{
+                var parms = new Dictionary<string, string>
+                {
+                { "page", "1" },
+                { "category", null }
+            };
+            }
+           
+            <a asp-area="Admin" asp-controller="Products" asp-action="List"
+               >
+                ТОВАРЫ
+            </a>
+            @*<a href="https://localhost:44311/Admin/products/list">@Model[0]</a>*@
+        </li>
+        <li>
+            <a asp-area="Admin" asp-controller="Category" asp-action="List">
+                Категории
+            </a>
+        </li>
+        <li>
+            <a href="https://localhost:44311/Admin/subcategory/index">@Model[2]</a>
+        </li>
+        <li>
+            <a href="https://localhost:44311/Admin/users/index">@Model[3]</a>
+        </li>
+    </ul>
+

@@ -1,0 +1,45 @@
+﻿@model Shop.ViewModels.CartIndexViewModel
+
+@{
+    ViewData["Title"] = "Корзина";
+}
+
+<h1>Корзина</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th class="text-right">Цена</th>
+            <th class="text-right">Сумма</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.CartItems)
+        {
+            <tr>
+                <td class="text-center">@item.Product.Name</td>
+                <td class="text-center">@item.Quantity</td>
+                <td class="text-center">@item.Product.Price</td>
+                <td class="text-center">@((item.Product.Price*item.Quantity).ToString("#.## грн'.'"))</td>
+                <td>
+                    <form asp-action="RemoveFromCart" method="post">
+                        <input type="hidden" name="Id" value="@item.Product.Id" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" ><span style="color:red ; font-size 16px" >&times;</span></button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3" class="text-right">Total:</td>
+        <td class="text-right"> @Model.Cart.CalculateTotalValue().ToString("#.## грн'.'")</td>
+    </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Продолжить покупки</a>
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">Оформить заказ</a>
+</div>

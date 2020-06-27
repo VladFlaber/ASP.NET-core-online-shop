@@ -1,0 +1,9 @@
+F:\asp practice\Shop\Shop.Tests\bin\Debug\netcoreapp3.1\Shop.Tests.deps.json
+F:\asp practice\Shop\Shop.Tests\bin\Debug\netcoreapp3.1\Shop.Tests.dll
+F:\asp practice\Shop\Shop.Tests\bin\Debug\netcoreapp3.1\Shop.Tests.pdb
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.csprojAssemblyReference.cache
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.csproj.CoreCompileInputs.cache
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.AssemblyInfoInputs.cache
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.AssemblyInfo.cs
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.dll
+F:\asp practice\Shop\Shop.Tests\obj\Debug\netcoreapp3.1\Shop.Tests.pdb

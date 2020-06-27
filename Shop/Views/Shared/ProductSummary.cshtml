@@ -1,0 +1,33 @@
+﻿@using Shop.Infrastructure.Helpers;
+@model Shop.ViewModels.ProductIndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+@*<script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>*@
+    <div class="clearfix">
+        <select class="float-md-right">
+            <option value="value">text</option>
+        </select>
+    </div>
+   
+<div id="mainForm" class="flex-container">
+
+    @foreach (var item in Model.Products)
+    {
+        @Html.GetProduct(item as ProductViewModel);
+    }
+</div>
+@if(Model.PageInfo.TotalPages>1 ){
+<div class="text-xl-center pagination-left"
+     page-model="@Model.PageInfo"
+     page-action="Index"
+     page-class-normal="btn-default"
+     page-class="btn"
+     page-class-selected="btn-primary"
+     page-url-category=@Model.SelectedCategory
+     page-classes-enabled="true">
+</div>
+}
+

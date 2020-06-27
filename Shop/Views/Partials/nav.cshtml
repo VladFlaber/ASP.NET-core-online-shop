@@ -1,0 +1,43 @@
+﻿@*@using Shop.ViewModels;
+@model Tuple<IndexProductsViewModel, List<CategoriesViewModel>>
+@{
+    ViewData["Title"] = "NavCategrories";
+}
+    <link rel="stylesheet" href="~/css/SideBar.css">
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                @foreach (var category in Model.Item2)
+                {
+                    <li class="navbar-btn">
+                        <strong>
+                            @Html.RouteLink(category.Category.Name,
+                   new { controller = "Home", action = "Index", category = category.Category.Name, page = "1" },
+                  null /* new { @class = "btn btn-block btn-default btn-sm " }*/);
+                        </strong>
+                        <ul class="nav navbar-inverse subCategoriesNav">
+
+                            @foreach (var subcategory in category.SubCategories)
+                            {
+                                <li class="navbar-btn">
+                                    <p class="pCategory">
+                                        @Html.RouteLink(subcategory.Name,
+                                                new { controller = "Home", action = "Index", subcategory = subcategory.Name, page = "1" },
+                                   null/* new { @class = "btn btn-block btn-default btn-sm " }*/);
+                                    </p>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+            </ul>
+
+        </div>    
+    </div>*@
+
+
+
+

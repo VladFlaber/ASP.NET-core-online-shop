@@ -1,0 +1,13 @@
+﻿@using Shop.Models
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Get";
+
+
+}
+
+<h1>Get</h1>
+@foreach (var item in Model)
+{
+    <p>@item.Name </p>
+}
